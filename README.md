@@ -33,3 +33,29 @@
    - Two Weeks from Today
 
 **Must have PowerPoint and good presentation**
+
+Nice to Have : 
+
+ - Utilize Firebase for Persistent Data Storage (Consider this basically a requirement).
+
+ - Mobile Responsive
+
+ - Use an alternative CSS framework like Materialize
+ 
+ Presentation Requirement:
+ 
+ - You will also be responsible for preparing a 10 minute presentation.
+ - This will be a formal presentation. 
+ - One in which you explain in detail:
+    - Your overall application’s concept
+    - The motivation for its development
+    - Your design process
+    - The technologies you used (and briefly how they work)
+    - A demonstration of its functionality
+    - Directions for future development
+    
+    ***Treat the presentation seriously! ***
+    ***Talking intelligently about tech > doing tech sometimes.***
+    
+    
+    
