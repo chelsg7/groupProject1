@@ -58,4 +58,11 @@ Nice to Have :
     ***Talking intelligently about tech > doing tech sometimes.***
     
     
+    Stick to APIs that do all of the following:
+    - Allows CORS
+    - Simple or no authentication
+    - JSON response returned
+    - Well documented
+    
+    
     
