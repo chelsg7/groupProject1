@@ -66,3 +66,19 @@ Nice to Have :
     
     
     
+    ****DAY 1***
+    
+    Brainstorm possible ideas 
+    - Begin API Research
+    - Create an initial draft / sketch of the final design
+    
+    Create a short 1 page proposal listing out each of the following:
+    - Project Title 
+    - Team Members
+    - Project Description
+    - Sketch of Final Product
+    - APIs to be Used
+    - Rough Breakdown of Tasks 
+    
+    
+    
