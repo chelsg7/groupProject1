@@ -1,44 +1,56 @@
-<!-- Bulma CDN -- >
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+  <!-- Needed Tagd-->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Trail-E
+  </title>
+  <!-- Bulma StyleSheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 
+  <!-- FontAwesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-<!--     
-      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>> -->
+  <!-- firebase tag -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
-      <!-- Pure CSS -->
-      <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/combine/npm/purecss@1.0.0/build/base-min.css,npm/purecss@1.0.0/build/grids-min.css,npm/purecss@1.0.0/build/forms-min.css">-->
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-      <title>
-        Trail-E
-      </title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    </head>
-    <body>
-      <nav class="navbar container" role="navigation" aria-label="main navigation">
-        <div class = "navbar-item has-text-centered">
-            <h1 class="title">
-              TRAIL-E
-            </h1>
-          </div>
-          <div class = "navbar-item">
-            <h2 class="subtitle">
-              You are
-              <strong>
-                Here:  
-              </strong>
-              <span id = "userLocation"></span>
-            </h2>
-          </div>
-            <a class="navbar-item navbar-end" href="https://bulma.io/">
-              Home
-            </a>
-            <a class="navbar-item navbar-end" href="https://bulma.io/">
-              About
-            </a> 
-      </nav>
-    <!-- <section class="section">
+  <!-- Stylesheet tags -->
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+  <script src="assets/javascript/main.js"></script>
+</head>
+<body>
+  <nav class="navbar container" role="navigation" aria-label="main navigation">
+    <div class = "navbar-item has-text-centered">
+      <h1 class="title">
+        TRAIL-E
+      </h1>
+    </div>
+    <div class = "navbar-item">
+      <h2 class="subtitle">
+        You are
+        <strong>
+          Here:
+        </strong>
+        <span id = "userLocation"></span>
+      </h2>
+    </div>
+    <a class="navbar-item navbar-end" href="index.html">
+      Home
+    </a>
+    <a class="navbar-item navbar-end" href="about.html">
+      About
+    </a> 
+  </nav>
+    <section class="section">
       <div class="container has-text-centered">
-        <h1 class="title">
+        <!-- <h1 class="title">
           TRAIL-E
         </h1>
         <p class="subtitle">
@@ -47,9 +59,37 @@
             Here : 
           </strong>
           <span id = "userLocation"></span>
-        </p>
+        </p> -->
+        <div class="field">
+            <label class="label">
+              Search For Another Location - Please use / instead of comma
+            </label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Location Input: For USA - 'State Abbreviation / City Name' OR For Others - 'Country ISO Abbreviation / City Name'" id="locationInput" id="searchLocation">
+            </div>
+          </div>
+          <div class="control">
+              <button class="button is-link" id= "userSearch">
+                Search
+              </button>
+          </div>
       </div>
-    </section> -->
+    </section>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">
+              Map Will Show Here
+            </h1>
+            <h2 class="subtitle">
+              Subtitle
+            </h2>
+            <div id="map">
+              <p>
+                map will go here
+              </p>
+            </div>
+        </div>
+      </section>
     <section class="section">
         <div class="container">
           <h1 class="title has-text-centered">
@@ -58,17 +98,28 @@
           <h2 class="subtitle has-text-centered">
             Subtitle
           </h2>
-          <div class="columns has-text-centered">
-              <div class="column">
-                First column
-              </div>
-              <div class="column">
-                Second column
-              </div>
-              <div class="column">
-                Third column
-              </div>
-            </div>
+          <table class="table" id="trailNames">
+              <thead>
+                <tr>
+                  <th>
+                      Trail Name
+                    </th>
+                  <th>
+                    Location
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Test Name
+                  </td>
+                  <td>
+                    Test Location
+                  </td>
+                </tr>
+              </tbody>
+              </table>
         </div>
       </section>
       <section class="section">
@@ -79,17 +130,16 @@
             <h2 class="subtitle">
               Subtitle will Go Here
             </h2>
-            <div class="columns">
-                <div class="column">
-                  First column
-                </div>
-                <div class="column">
-                  Second column
-                </div>
-                <div class="column">
-                  Third column
-                </div>
-              </div>
+            <div id="currentWeather">
+              <p>
+                  current will go here
+              </p>
+            </div>
+            <div id="forecastWeather">
+              <p>
+                  forecast will go here
+              </p>
+            </div>
           </div>
         </section>
             <section class="section">
@@ -100,6 +150,60 @@
                 <h2 class="subtitle">
                   Subtitle
                 </h2>
+                <div class="field">
+                  <label class="label">
+                    Name
+                  </label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Name input" id="userName">
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">
+                    Trail Name
+                  </label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Trail input" id="trailInput">
+                  </div>
+                </div>
+                <div class="field">
+                    <label class="label">
+                      Rating
+                    </label>
+                    <div class="control">
+                      <div class="select">
+                        <select id="rating">
+                          <option>
+                            <p>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </p>
+                          </option>
+                          <option>
+                              <i class=" fas fa-star"></i>
+                              <i class=" fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star-half"></i>
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                <div class="field">
+                  <label class="label">Message</label>
+                  <div class="control">
+                    <textarea class="textarea" placeholder="Comments Go Here" id = "userComments"></textarea>
+                  </div>
+                </div>
+                <div class="control">
+                    <button class="button is-link" id="formSubmit">
+                      Submit
+                    </button>
+                  </div>
               </div>
             </section>
             <section class="section">
@@ -114,10 +218,14 @@
                         <thead>
                           <tr>
                             <th>
-                              User
+                              Name
                             </th>
                             <th>
-                              Rating</th>
+                                Trail Name
+                              </th>
+                            <th>
+                              Rating
+                            </th>
                             <th>
                               Comments
                             </th>
@@ -126,13 +234,17 @@
                         <tbody>
                           <tr>
                             <td>
-                              Test
+                              Test User Name
                             </td>
                             <td>
-                              Test
+                                Test Trail Name
                             </td>
                             <td>
-                              Test
+                              Test Rating
+                            </td>
+                            <td>
+                              Ice cream macaroon jelly donut apple pie halvah liquorice donut biscuit. Bonbon tart liquorice toffee donut candy canes. Chupa chups dragée jelly bear claw.
+                              Marshmallow sugar plum icing danish brownie chocolate cake pudding sesame snaps. Chocolate bar muffin sugar plum dragée gummies wafer. Macaroon cupcake jelly dragée candy chocolate bar.
                             </td>
                           </tr>
                         </tbody>
@@ -223,11 +335,18 @@
           </section>
         </section>
       -->
-  
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+      <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDPtaTELYp2qWeoyfOF3aIXnz_WLEphxB0",
+            authDomain: "project1-92fc5.firebaseapp.com",
+            databaseURL: "https://project1-92fc5.firebaseio.com",
+            projectId: "project1-92fc5",
+            storageBucket: "project1-92fc5.appspot.com",
+            messagingSenderId: "568021023423"
+          };
+          firebase.initializeApp(config);
+        </script>
     <!-- </body>
   </html> -->
