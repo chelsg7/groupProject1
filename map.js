@@ -44,11 +44,11 @@ $.ajax({
           $("#trails").append(response.places[i].name + "<br>")
         //   var myLatLng = { lat: parseInt(lat), lng: parseInt(lng)};
             var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(parseInt(lat), parseInt(lng)),
+            position: new google.maps.LatLng(lat, lng),
             map: map,
             title: response.places[i].name
           })
-          console.log(marker)
+          console.log(marker.position)
           
       }
     }
