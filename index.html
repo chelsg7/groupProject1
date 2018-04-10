@@ -8,6 +8,7 @@
   <title>
     Trail-E
   </title>
+  
   <!-- Bulma StyleSheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 
@@ -30,6 +31,8 @@
 <!-- Google Maps API -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzTN-eOoVKcWQWOuKIIY9tmg8xGMVCG1w&callback=initMap"></script>
 
+<!-- Google Maps API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ8kKByR_TwW_3ptyFgP9947Q5OP34GN0&callback=initMap"></script>
   <!-- Stylesheet tags -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
   <script src="assets/javascript/main.js"></script>
@@ -116,16 +119,18 @@
                   <th>
                     Location
                   </th>
+                  <th>
+                    Directions
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    Test Name
+                  <td id="names">
                   </td>
-                  <td>
-                    Test Location
+                  <td id="location">
                   </td>
+                  <td id="directions"></td>
                 </tr>
               </tbody>
               </table>
@@ -363,4 +368,4 @@
         </section>
       -->
     <!-- </body>
-  </html> -->```
+  </html> -->
