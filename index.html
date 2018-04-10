@@ -305,62 +305,56 @@
       About
     </a> 
   </nav>
-    <section class="section">
-      <div class="container has-text-centered">
-        <!-- <h1 class="title">
-          TRAIL-E
-        </h1>
-        <p class="subtitle">
-          You are 
-          <strong>
-            Here : 
-          </strong>
-          <span id = "userLocation"></span>
-        </p> -->
-        <div class="field">
-            <label class="label">
-              Search For Another Location - Please use / instead of comma
-            </label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Location Input: For USA - 'State Abbreviation / City Name' OR For Others - 'Country ISO Abbreviation / City Name'" id="locationInput" id="searchLocation">
-            </div>
-          </div>
-          <div class="control">
-              <button class="button is-link" id= "userSearch">
-                Search
-              </button>
-          </div>
-      </div>
-    </section>
-    <section class="section">
-        <div class="container has-text-centered">
-            <h1 class="title">
-              Map Will Show Here
+  <section class = "section">
+    <section class = "container">
+      <div class="tile is-ancestor">
+        <div class = "tile is-vertical is-parent is-6">
+          <article class = "tile is-child box has-text-centered">
+            <h1 class = "title">
+              Search
             </h1>
-            <h2 class="subtitle">
-              Subtitle
-            </h2>
+            <div class = "content">
+              <div class="field">
+                <label class="label">
+                  Search For Another Location:
+                  <br> - Please use / instead of comma
+                  <br> - For USA: State Abbreviation / City Name
+                  <br> - For Others: Country ISO Abbreviation / City Name
+                </label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Location Input" id="locationInput" id="searchLocation">
+                </div>
+              </div>
+              <div class="control">
+                <button class="button is-link" id= "userSearch">
+                  Search
+                </button>
+              </div>
+            </div>
+        </article>
+        <article class = "tile is-child box">
+          <h1 class = "title">
+            Map
+          </h1>
+          <div class = "content">
             <div id="map">
               <p>
                 map will go here
               </p>
             </div>
-        </div>
-      </section>
-    <section class="section">
-        <div class="container">
-          <h1 class="title has-text-centered">
-            Trails Nearby Will Go in this Section
+          </div>
+        </article>
+        <article class = "tile is-child box">
+          <h1 class = "title">
+            Trails List
           </h1>
-          <h2 class="subtitle has-text-centered">
-            Subtitle
-          </h2>
-          <table class="table" id="trailNames">
+          <div class = "content">
+            <table class="table is-bordered" id="trailNames">
               <thead>
                 <tr>
                   <th>
-                      Trail Name
-                    </th>
+                    Trail Name
+                  </th>
                   <th>
                     Location
                   </th>
@@ -368,35 +362,45 @@
               </thead>
               <tbody>
                 <tr>
+<<<<<<< Updated upstream
                   <td>
                     Test Name
                   </td>
                   <td>
                     Test Location
+=======
+                  <td id="names">
+
+                  </td>
+                  <td id="location">
+
+                  </td>
+                  <td id="directions">
+
+>>>>>>> Stashed changes
                   </td>
                 </tr>
               </tbody>
-              </table>
-        </div>
-      </section>
-      <section class="section">
-          <div class="container has-text-centered">
-            <h1 class="title">
-              Weather Nearby will Go in this Section
-            </h1>
-            <h2 class="subtitle">
-              Subtitle will Go Here
-            </h2>
+            </table>
+          </div>
+        </article>
+      </div> <!-- end one div -->
+      <div class = "tile is-vertical is-parent is-6">
+        <article class = "tile is-child box">
+          <h1 class = "title">
+            Weather
+          </h1>
+          <div class = "content">
             <div id="currentWeather">
               <p>
-                  current will go here
+                current will go here
               </p>
-              
             </div>
             <div id="forecastWeather">
               <p>
-                  forecast will go here
+                forecast will go here
               </p>
+<<<<<<< Updated upstream
               <div id = "forecast columns">
                   <div class= "column">
                       <div id="duration1"></div>
@@ -473,143 +477,216 @@
                   <div class="control">
                     <textarea class="textarea" placeholder="Comments Go Here" id = "userComments"></textarea>
                   </div>
+=======
+              <div class = "columns"id = "forecast">
+                <div class = "column">
+                  <div id="duration1"></div>
+                  <div id="forecat_first"></div>
                 </div>
-                <div class="control">
-                    <button class="button is-link" id="formSubmit">
-                      Submit
-                    </button>
-                  </div>
-              </div>
-            </section>
-            <section class="section">
-                  <div class="container has-text-centered">
-                    <h1 class="title">
-                      Table Goes Here
-                    </h1>
-                    <h2 class="subtitle">
-                      Subtitle
-                    </h2>
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th>
-                              Name
-                            </th>
-                            <th>
-                                Trail Name
-                              </th>
-                            <th>
-                              Rating
-                            </th>
-                            <th>
-                              Comments
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              Test User Name
-                            </td>
-                            <td>
-                                Test Trail Name
-                            </td>
-                            <td>
-                              Test Rating
-                            </td>
-                            <td>
-                              Ice cream macaroon jelly donut apple pie halvah liquorice donut biscuit. Bonbon tart liquorice toffee donut candy canes. Chupa chups dragée jelly bear claw.
-                              Marshmallow sugar plum icing danish brownie chocolate cake pudding sesame snaps. Chocolate bar muffin sugar plum dragée gummies wafer. Macaroon cupcake jelly dragée candy chocolate bar.
-                            </td>
-                          </tr>
-                        </tbody>
-                        </table>
-                  </div>
-                </section>
-                <footer class="footer">
-                  <div class="container">
-                      <div class="content has-text-centered">
-                        <p>
-                          Footer Info will Go Here
-                        </p>
-                      </div>
-                    </div>
-                  </footer>
-    </body>
-  </html>
-      
-  
-  
-  
-  
-  
-  <!--    <section class = "hero">
-        <section class = "section">
-          <div class = "container">
-            <h1 class = "title text-center content">
-              Trail-E
-            </h1>
-            <h2 class="text-center subtitle">
-              User Location Goes Here
-              <span id = "userLocation"></span>
-            </h2>
-          </div>
-        </section>
-        <section class="hero my-5">
-          <section class = "container">
-            <section class = "col-5 float-left bg-info card">
-              <h3 class = "text-center card-head">
-                Trails Go Here
-              </h3>
-              <div class = "card-body">
-                text
-              </div>
-            </section>
-            <section class = "col-5 float-right bg-info card">
-                <h3 class = "text-center card-head">
-                  Weather Goes Here
-                </h3>
-                <div class = "card-body">
-                  text
+                <div class ="column">
+                  <div id="duration2"></div>
+                  <div id="forecat_second"></div>
                 </div>
-              </section>
-          </section>
-        </section>
-        <section class = "section my-5">
-          <section class = "container">
-            <div class = "mx-auto bg-success card text-center">
-              <h3 class= "card-head">
-                User Input Title
-              </h3>
-              <div class ="card-body">
-                <p>
-                  form will go here
-                </p>
-              </div>
-          </section>
-        </section>
-        <section class = "row my-5">
-          <section class = "container">
-            <div class = "mx-auto bg-warning card text-center">
-              <h3 class = "card-head">
-                Table Title Goes Here
-              </h3>
-              <div class = "card-body">
-                <p>
-                  table
-                </p>
+                <div class ="column">
+                  <div id="duration3"></div>
+                  <div id="forecat_third"></div>
+>>>>>>> Stashed changes
+                </div>
               </div>
             </div>
-          </section>
-        </section>
-        <section class = "row container mx-auto">
-          <section class = "navbar-bottom navbar-dark fixed-bottom bg-dark text-center text-light mt-5">
-            <p>
-              Ned, Ben, Chelsea, Rishikesh
-            </p>
-          </section>
-        </section>
-      -->
+          </div>
+        </article>
+        <article class = "tile is-child box">
+          <h1 class = "title">
+            Form Input
+          </h1>
+          <div class = "content has-text-centered">
+            <div class="field">
+              <label class="label">
+                Name
+              </label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Name input" id="userName">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">
+                Trail Name
+              </label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Trail input" id="trailInput">
+              </div>
+            </div>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="answer">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star-half"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer">
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </label>
+              </div>
+              <div class="field">
+                <label class="label">
+                  Message
+                </label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Comments Go Here" id = "userComments">
+                  </textarea>
+                </div>
+              </div>
+              <div class="control">
+                <button class="button is-link" id="formSubmit">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class = "tile is-child box">
+            <h1 class = "title">
+              Firebase
+            </h1>
+            <div class = "content">
+              <table class="table" id="firebaseTable">
+                <thead>
+                  <tr>
+                    <th>
+                      Name
+                    </th>
+                    <th>
+                      Trail Name
+                    </th>
+                    <th>
+                      Rating
+                    </th>
+                    <th>
+                      Comments
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Test User Name
+                    </td>
+                    <td>
+                      Test Trail Name
+                    </td>
+                    <td>
+                      Test Rating
+                    </td>
+                    <td>
+                      Ice cream macaroon jelly donut apple pie halvah liquorice donut biscuit. Bonbon tart liquorice toffee donut candy canes. Chupa chups dragée jelly bear claw.
+                      Marshmallow sugar plum icing danish brownie chocolate cake pudding sesame snaps. Chocolate bar muffin sugar plum dragée gummies wafer. Macaroon cupcake jelly dragée candy chocolate bar.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+    </section>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Footer Info will Go Here
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
       <script src="assets/javascript/weather.js"></script>
       <script src="assets/javascript/map.js"></script>
       <script>
@@ -623,7 +700,11 @@
             messagingSenderId: "568021023423"
           };
           firebase.initializeApp(config);
+<<<<<<< Updated upstream
         </script>
     <!-- </body>
   </html> -->
+>>>>>>> Stashed changes
+=======
+        </script>
 >>>>>>> Stashed changes
