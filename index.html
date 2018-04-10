@@ -8,6 +8,7 @@
   <title>
     Trail-E
   </title>
+  
   <!-- Bulma StyleSheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 
@@ -17,14 +18,14 @@
 
   <!-- firebase tag -->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-  <script src='map.js'></script>
 
-<!-- Google Maps API -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5M1oNXiLmW4aHddAPsa7eqfuTBG0ITzg&callback=initMap"></script>
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src='assets/javascript/map.js'></script>
 
+<!-- Google Maps API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ8kKByR_TwW_3ptyFgP9947Q5OP34GN0&callback=initMap"></script>
   <!-- Stylesheet tags -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
   <script src="assets/javascript/main.js"></script>
@@ -111,6 +112,9 @@
                   <th>
                     Location
                   </th>
+                  <th>
+                    Directions
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -119,6 +123,7 @@
                   </td>
                   <td id="location">
                   </td>
+                  <td id="directions"></td>
                 </tr>
               </tbody>
               </table>
@@ -355,7 +360,7 @@
           </section>
         </section>
       -->
-      <!-- <script src="assets/javascript/weather.js"></script> -->
+      <script src="assets/javascript/weather.js"></script>
 
       <script>
           // Initialize Firebase
@@ -370,4 +375,4 @@
           firebase.initializeApp(config);
         </script>
     <!-- </body>
-  </html> -->```
+  </html> -->
