@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
     Trail-E
-  </title>
-  
+  </title>  
   <!-- Bulma StyleSheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 
@@ -18,7 +17,6 @@
 
   <!-- firebase tag -->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -130,43 +128,52 @@
         </div>
       </section>
       <section class="section">
-          <div class="container has-text-centered">
-            <h1 class="title">
-              Weather Nearby will Go in this Section
-            </h1>
-            <h2 class="subtitle">
-              Subtitle will Go Here
-            </h2>
-            <div id="currentWeather">
-              <p>
-                  current will go here
-              </p>
-              
-            </div>
-            <div id="forecastWeather">
-              <p>
-                  forecast will go here
-              </p>
-              <div id = "forecast columns">
-                  <div class= "column">
-                      <div id="duration1"></div>
-                      <div id="forecat_first"></div>
-                    </div>
-                    <div class ="column">
-                      <div id="duration2"></div>
-                      <div id="forecat_second"></div>
-                    </div>
-                    <div class ="column">
-                      <div id="duration3"></div>
-                      <div id="forecat_third"></div>
-                    </div>
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Weather Information
+          </h1>
+          
+          <div id="currentWeather">
+            <p>
+                <strong>Current Weather</strong>
+            </p>
+            <div class= "column">
+                <div id="current_condition"></div>
+                <div id="current_img"></div>
               </div>
-       
-              
-              
-            </div>
+              <div class ="column">
+                <div id="current_data"></div>                 
+              </div>
+              <div class ="column">
+                <div id="current_data2"></div>                 
+              </div>
+            
           </div>
-        </section>
+          <div id="forecastWeather">
+            <p>
+                <strong>Forecast</strong>
+            </p>
+            <div id = "forecast columns">
+                <div class= "column">
+                    <div id="duration1"></div>
+                    <div id="forecat_first"></div>
+                    <div id="forecat_first_description"></div>
+                  </div>
+                  <div class ="column">
+                    <div id="duration2"></div>
+                    <div id="forecat_second"></div>
+                    <div id="forecat_second_description"></div>
+                  </div>
+                  <div class ="column">
+                    <div id="duration3"></div>
+                    <div id="forecat_third"></div>
+                    <div id="forecat_third_description"></div>
+                  </div>
+            </div>          
+            
+          </div>
+        </div>
+      </section>
             <section class="section">
               <div class="container has-text-centered">
                 <h1 class="title">
