@@ -2,7 +2,6 @@ function getCity(city) {
 
 
 var queryURL = "http://api.wunderground.com/api/e58ab528f4132c06/forecast/q/"+city+".json";
-//var queryURL2 = "http://api.wunderground.com/api/e58ab528f4132c06/conditions/q/np/syangja.json"
 
 $.ajax({
     url: queryURL,
@@ -45,7 +44,41 @@ $.ajax({
        // $("#forecat_third").html("</br><p>Day: " +response.forecast.txt_forecast.forecastday[0].fcttext + 
        // "</br>" + response.forecast.txt_forecast.forecastday[0].fcttext_metric +  "</p>");
        // console.log("<img>" + response.forecast.txt_forecast.forecastday[0].icon_url +">");
-    });
+    });   
+
+
+    // var queryURL2 = "http://api.wunderground.com/api/e58ab528f4132c06/conditions/q/"+city+"json"
+
+    // $.ajax({
+    //     url: queryURL2,
+    //     method: "GET"
+    //     })
+        
+    //     .then (function(response) {
+    //         console.log(queryURL);
+    //         console.log(response);
+    //         console.log(response.forecast.txt_forecast.date);
+    //         var x = document.createElement("IMG");
+    //         x.setAttribute("src", response.forecast.txt_forecast.forecastday[0].icon_url);
+    //         x.setAttribute("width", "70");
+    //         x.setAttribute("height", "auto");
+    //         x.setAttribute("alt", "The Pulpit Rock");
+    //     // document.body.appendChild(x);
+    //     console.log(x);
+    //         $("#duration1").html(response.forecast.txt_forecast.forecastday[0].title);
+    //         $("#forecat_first").html(x);
+            
+    //         var y = document.createElement("IMG");
+    //         y.setAttribute("src", response.forecast.txt_forecast.forecastday[1].icon_url);
+    //         y.setAttribute("width", "70");
+    //         y.setAttribute("height", "auto");
+    //         y.setAttribute("alt", "The Pulpit Rock");
+    //     // document.body.appendChild(x);
+       
+    //     // $("#forecat_third").html("</br><p>Day: " +response.forecast.txt_forecast.forecastday[0].fcttext + 
+    //     // "</br>" + response.forecast.txt_forecast.forecastday[0].fcttext_metric +  "</p>");
+    //     // console.log("<img>" + response.forecast.txt_forecast.forecastday[0].icon_url +">");
+    //     });
     
 
 };
@@ -55,8 +88,6 @@ $("#submit").click(function(){
     getCity(city);
    
   });
-
-
 
 
 function getLocation() {
