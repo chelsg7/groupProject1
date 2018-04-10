@@ -34,7 +34,7 @@ $.ajax({
       var myLatLng = { lat: 0, lng: 0};
       var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 35.851, lng: -78.796 },
-        zoom: 8
+        zoom: 10
       });
       for (var i = 0; i < 10; i++) {
           var lat = response.places[i].lat;
@@ -49,6 +49,8 @@ $.ajax({
             title: response.places[i].name
           })
           console.log(marker.position)
+          $("#names").append(response.places[i].name + "<br>")
+          $("#location").append(response.places[i].city + ", " + response.places[i].state + "<br>")
           
       }
     }
