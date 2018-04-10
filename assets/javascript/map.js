@@ -8,13 +8,13 @@ var lngArray = []
 // queryURL += '?' + $.param({
 //     'api-key': "sa38JqfW39msh5UFDYOe0Y44RTAEp1jP9K1jsnk52st50qIIvw"
 
-
     /*
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 35.851, lng: -78.796 },
     zoom: 8
   });
   */
+
 
 
   // Try HTML5 geolocation.
@@ -99,6 +99,7 @@ function showPins(lat, lng) {
       var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 35.851, lng: -78.796 },
         zoom: 10
+
       });
       for (var i = 0; i < 10; i++) {
           var lat = response.places[i].lat;
@@ -129,6 +130,7 @@ $(document).ready(function () {
 
 
 // infoWindow = new google.maps.InfoWindow;
+
 // if (navigator.geolocation) {
 //     navigator.geolocation.getCurrentPosition(function (position) {
 //       var pos = {
