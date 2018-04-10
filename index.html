@@ -22,14 +22,11 @@
     <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
-  <script defer src='map.js'></script>
+  <script defer src='assets/javascript/map.js'></script>
 
   <script defer src="assets/javascript/weather.js"></script>
 
   <script defer src="assets/javascript/firebase-trail-reviews.js"></script>
-
-<!-- Google Maps API -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzTN-eOoVKcWQWOuKIIY9tmg8xGMVCG1w&callback=initMap"></script>
 
 <!-- Google Maps API -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ8kKByR_TwW_3ptyFgP9947Q5OP34GN0&callback=initMap"></script>
@@ -246,7 +243,7 @@
                     <h2 class="subtitle">
                       Subtitle
                     </h2>
-                    <table class="table">
+                    <table class="table" id="firebaseTable">
                         <thead>
                           <tr>
                             <th>

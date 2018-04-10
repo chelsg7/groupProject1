@@ -33,6 +33,7 @@ $(document).ready(function() {
       timeAdded: firebase.database.ServerValue.TIMESTAMP
     })
     $("input").val("");
+    $("textarea").val("");
   });
 
   database.ref().on("child_added", function (childSnapshot) {
@@ -42,12 +43,7 @@ $(document).ready(function() {
     var rating = childSnapshot.val().rating;
     var comments = childSnapshot.val().comments;
 
-    console.log(userName);
-    console.log(trailName);
-    console.log(rating);
-    console.log(comments);
-
-    $(".table").append(
+    $("#firebaseTable").append(
       `
     <tr>
       <td>${userName}</td>
@@ -57,6 +53,7 @@ $(document).ready(function() {
     </tr>
     `
     )
+
     // Handle any errors
   }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
