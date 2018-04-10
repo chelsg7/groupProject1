@@ -15,7 +15,7 @@ function initMap() {
     zoom: 8
   });
   */
- // infoWindow = new google.maps.InfoWindow;
+
 
   // Try HTML5 geolocation.
 
@@ -57,6 +57,7 @@ $.ajax({
 })
 
 }
+// infoWindow = new google.maps.InfoWindow;
 // if (navigator.geolocation) {
 //     navigator.geolocation.getCurrentPosition(function (position) {
 //       var pos = {
