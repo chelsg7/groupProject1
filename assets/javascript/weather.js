@@ -60,14 +60,11 @@ $("#submit").click(function(){
 
 
 function getLocation() {
-    if (navigator.geolocation) {
+   
         navigator.geolocation.getCurrentPosition(showPosition);
 
-    }
-    else {
-        console.log("not available");
     
-    } 
+        
 }
  
 
@@ -102,8 +99,16 @@ $.ajax({
 }
 
 $( document ).ready(function() {
+
+    if (navigator.geolocation) {
+         getLocation();
+    }
+    else {
+        console.log("not available");
     
-    getLocation();
+    } 
+    
+   
     
 
 });
