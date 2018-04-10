@@ -5,8 +5,8 @@
     */
 
 
-function getCity() {
-    var city = "nc/cary";
+function getCity(city) {
+   // var city = "nc/cary";
 
     //API for wether forecast, use one of the below two api key
     var queryURL = "http://api.wunderground.com/api/87d18b0282c9396c/forecast/q/"+city+".json"; 
@@ -85,9 +85,12 @@ function getCity() {
         });
 };
 
-$("#submit").click(function(){
-    city= $("#city").val().trim();
+$("#userSearch").click(function(){
+    city= $("#locationInput").val().trim();
+    $("#userLocation").html("");
+    $("#userLocation").html(city);
     getCity(city);
+    
    
 });
 
@@ -102,9 +105,11 @@ function showPosition(position) {
     var getLongitude = position.coords.longitude;
     console.log(getLatitude);
     console.log(getLongitude);
-    
-    var queryURL1 = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + getLatitude+"," + getLongitude+ "&sensor=true";
-
+    var apiCode = "AIzaSyBxbpX0AuckHtRbiG6fA8EFQoX6WDeZYFk";
+    //var queryURL1 = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + getLatitude+"," + getLongitude+ "&sensor=true";
+    var queryURL1 = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + getLatitude + "," + getLongitude + "&key=" + apiCode;
+   
+    console.log(queryURL1);
     $.ajax({
     url: queryURL1,
     method: "GET"
@@ -112,11 +117,12 @@ function showPosition(position) {
     
         .then (function(response) {
         console.log(response);
-        console.log(response.results[4].address_components[2].short_name);
-        console.log(response.results[4].address_components[0].long_name);
-        state=response.results[4].address_components[2].short_name;
-        cityName=response.results[4].address_components[0].long_name;
+        console.log(response.results[1].address_components[4].short_name);
+        console.log(response.results[1].address_components[2].long_name);
+        state=response.results[1].address_components[4].short_name;
+        cityName=response.results[1].address_components[2].long_name;
         var city= state+"/"+cityName;
+        $("#userLocation").html(cityName +", " +state);
         getCity(city);
         });
 }
@@ -124,8 +130,8 @@ function showPosition(position) {
 $( document ).ready(function() {
 
     if (navigator.geolocation) {
-      //   getLocation();
-         getCity();
+         getLocation();
+      //   getCity();
     }
     else {
         console.log("not available");
