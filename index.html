@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="trailAPI.js"></script>
-=======
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <!-- Needed Tagd-->
@@ -18,95 +8,24 @@
   <title>
     Trail-E
   </title>
+  
   <!-- Bulma StyleSheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
->>>>>>> d39c9441af4834fd270aaa734f51cec0c706a957
 
   <!-- FontAwesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-<<<<<<< HEAD
-    <title>
-      Trail-E
-    </title>
-  </head>
-  <body>
-    <section class = "container-flex bg-light">
-      <section class = "row">
-        <div class = "container">
-          <h1 class = "display-1 text-center">
-            Trail-E
-          </h1>
-          <h2 class="text-center display-4">
-            User Location Goes Here
-            <span id = "userLocation"></span>
-          </h2>
-        </div>
-      </section>
-      <section class="row my-5">
-        <section class = "container">
-          <section class = "col-5 float-left bg-info card">
-            <h3 class = "text-center card-head">
-              Trails Go Here
-            </h3>
-            <div class = "card-body">
-              text
-            </div>
-          </section>
-          <section class = "col-5 float-right bg-info card">
-              <h3 class = "text-center card-head">
-                Weather Goes Here
-              </h3>
-              <div class = "card-body">
-                text
-              </div>
-            </section>
-        </section>
-      </section>
-      <section class = "row my-5">
-        <section class = "container">
-          <div class = "mx-auto bg-success card text-center">
-            <h3 class= "card-head">
-              User Input Goes "Here"
-            </h3>
-            <div class ="card-body">
-              <p>
-                Body
-              </p>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section class = "row my-5">
-        <section class = "container">
-          <div class = "mx-auto bg-warning card text-center">
-            <h3 class = "card-head">
-              Table Goes Here
-            </h3>
-            <div class = "card-body">
-              <p>
-                table
-              </p>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section class = "row container mx-auto">
-        <section class = "navbar-bottom navbar-dark fixed-bottom bg-dark text-center text-light mt-5">
-          <p>
-            Ned, Ben, Chelsea, Rishikesh
-          </p>
-        </section>
-      </section>
-=======
   <!-- firebase tag -->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
->>>>>>> d39c9441af4834fd270aaa734f51cec0c706a957
+
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src='assets/javascript/map.js'></script>
 
+<!-- Google Maps API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ8kKByR_TwW_3ptyFgP9947Q5OP34GN0&callback=initMap"></script>
   <!-- Stylesheet tags -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
   <script src="assets/javascript/main.js"></script>
@@ -193,16 +112,18 @@
                   <th>
                     Location
                   </th>
+                  <th>
+                    Directions
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    Test Name
+                  <td id="names">
                   </td>
-                  <td>
-                    Test Location
+                  <td id="location">
                   </td>
+                  <td id="directions"></td>
                 </tr>
               </tbody>
               </table>
@@ -440,6 +361,7 @@
         </section>
       -->
       <script src="assets/javascript/weather.js"></script>
+
       <script>
           // Initialize Firebase
           var config = {

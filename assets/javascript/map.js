@@ -8,21 +8,85 @@ var lngArray = []
 // queryURL += '?' + $.param({
 //     'api-key': "sa38JqfW39msh5UFDYOe0Y44RTAEp1jP9K1jsnk52st50qIIvw"
 
-function initMap() {
     /*
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 35.851, lng: -78.796 },
     zoom: 8
   });
   */
- // infoWindow = new google.maps.InfoWindow;
+
+
 
   // Try HTML5 geolocation.
+//   function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition);
 
-    
-    var queryURL = "https://trailapi-trailapi.p.mashape.com/?lat=" + lat + "&limit=10&lon="+ lng + "&radius=25";
+//     }
+//     else {
+//         console.log("not available");
+//         getLatitude = 0;
+//         getLongitude = 0;
+//     } 
+// }
+ 
+// function call() {
+//     return true;
+// }
+// function showPosition(position) {
+//     var getLatitude = position.coords.latitude;
+//     var getLongitude = position.coords.longitude;
+//     console.log(getLatitude);
+//     console.log(getLongitude);
+
+//     return true;
+//     initMap()
+
+// }
+
 // })
-$.ajax({
+var map, infoWindow;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 6
+  });
+  infoWindow = new google.maps.InfoWindow;
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      showPins(pos.lat, pos.lng)
+      $("#userLocation").text("Latitude: " + pos.lat + ", Longitude: " + pos.lng)
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      infoWindow.open(map);
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.open(map);
+}
+function showPins(lat, lng) {
+
+    var queryURL = "https://trailapi-trailapi.p.mashape.com/?lat=" + lat + "&limit=10&lon="+ lng + "&radius=25";
+    $.ajax({
     url: queryURL,
     dataType: 'json',
     headers: {"X-Mashape-Key": "sa38JqfW39msh5UFDYOe0Y44RTAEp1jP9K1jsnk52st50qIIvw",
@@ -34,7 +98,8 @@ $.ajax({
       var myLatLng = { lat: 0, lng: 0};
       var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 35.851, lng: -78.796 },
-        zoom: 8
+        zoom: 10
+
       });
       for (var i = 0; i < 10; i++) {
           var lat = response.places[i].lat;
@@ -44,17 +109,28 @@ $.ajax({
           $("#trails").append(response.places[i].name + "<br>")
         //   var myLatLng = { lat: parseInt(lat), lng: parseInt(lng)};
             var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(parseInt(lat), parseInt(lng)),
+            position: new google.maps.LatLng(lat, lng),
             map: map,
             title: response.places[i].name
           })
-          console.log(marker)
-          
+          console.log(marker.position)
+          $("#names").append(response.places[i].name + "<br>")
+          $("#location").append(response.places[i].city + ", " + response.places[i].state + "<br>")
+          $("#directions").append(response.places[i].directions + "<br>")
       }
     }
 })
+    } 
 
-}
+
+
+$(document).ready(function () {
+})
+
+
+
+// infoWindow = new google.maps.InfoWindow;
+
 // if (navigator.geolocation) {
 //     navigator.geolocation.getCurrentPosition(function (position) {
 //       var pos = {
