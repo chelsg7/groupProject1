@@ -1,55 +1,14 @@
-var map, infoWindow;
 var lat = 35.779590;
 var lng = -78.638179;
-var latArray = []
-var lngArray = []
-
-// Perfoming an AJAX GET request to our queryURL
-// queryURL += '?' + $.param({
-//     'api-key': "sa38JqfW39msh5UFDYOe0Y44RTAEp1jP9K1jsnk52st50qIIvw"
-
-    /*
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 35.851, lng: -78.796 },
-    zoom: 8
-  });
-  */
+var latArray = [];
+var lngArray = [];
 
 
-
-  // Try HTML5 geolocation.
-//   function getLocation() {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(showPosition);
-
-//     }
-//     else {
-//         console.log("not available");
-//         getLatitude = 0;
-//         getLongitude = 0;
-//     } 
-// }
- 
-// function call() {
-//     return true;
-// }
-// function showPosition(position) {
-//     var getLatitude = position.coords.latitude;
-//     var getLongitude = position.coords.longitude;
-//     console.log(getLatitude);
-//     console.log(getLongitude);
-
-//     return true;
-//     initMap()
-
-// }
-
-// })
 var map, infoWindow;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 6
+    center: {lat: 35.779, lng: -78.638},
+    zoom: 8
   });
   infoWindow = new google.maps.InfoWindow;
 
