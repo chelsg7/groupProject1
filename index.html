@@ -34,35 +34,39 @@
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
   
-<body>
-  <nav class="navbar container" role="navigation" aria-label="main navigation">
-    <div class = "navbar-item has-text-centered">
-      <h1 class="title has-text-centered">
-        TRAIL-E
-      </h1>
+<body id="bodyBack">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class = "container">
+      <div class = "navbar-item has-text-centered">
+        <h1 class="title has-text-centered white">
+          TRAIL-E
+        </h1>
+      </div>
+      <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet">
+        <h2 class="subtitle white">
+          You are Here:
+          <!-- <span id = "userLocation"></span> -->
+        </h2>
+      </div>
+      <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet">
+        <h2 class="subtitle white">
+          <span id = "userLocation"></span>
+        </h2>
+      </div>
+      <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald white" href="index.html">
+        Home
+      </a>
+      <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald white" href="about.html">
+        About
+      </a> 
     </div>
-    <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet">
-      <h2 class="subtitle">
-        You are
-        <strong>
-          HERE:
-        </strong>
-        <span id = "userLocation"></span>
-      </h2>
-    </div>
-    <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald" href="index.html">
-      Home
-    </a>
-    <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald" href="about.html">
-      About
-    </a> 
   </nav>
-  <section class = "section">
+  <section class = "section" >
     <section class = "container">
       <div class="tile is-ancestor">
         <div class = "tile is-vertical is-parent is-6">
-          <article class = "tile is-child box has-text-centered">
-            <h1 class = "title gugi">
+          <article class = "tile is-child box has-text-centered back">
+            <h1 class = "title head">
               Search
             </h1>
             <div class = "content">
@@ -84,8 +88,8 @@
               </div>
             </div>
         </article>
-        <article class = "tile is-child box has-text-centered">
-          <h1 class = "title">
+        <article class = "tile is-child box has-text-centered back">
+          <h1 class = "title head">
             Map
           </h1>
           <div class = "content">
@@ -96,8 +100,8 @@
             </div>
           </div>
         </article>
-        <article class = "tile is-child box">
-          <h1 class = "title has-text-centered">
+        <article class = "tile is-child box back">
+          <h1 class = "title has-text-centered head">
             Trails List
           </h1>
           <div class = "content">
@@ -132,8 +136,8 @@
         </article>
       </div> <!-- end one div -->
       <div class = "tile is-vertical is-parent is-6">
-        <article class = "tile is-child box">
-          <h1 class = "title has-text-centered">
+        <article class = "tile is-child box back">
+          <h1 class = "title has-text-centered head">
             Weather
           </h1>
           <div class = "content">
@@ -188,8 +192,8 @@
             </div>
             </div>
         </article>
-        <article class = "tile is-child box">
-          <h1 class = "title has-text-centered">
+        <article class = "tile is-child box back">
+          <h1 class = "title has-text-centered head">
             User Input Form
           </h1>
           <div class = "content has-text-centered">
@@ -323,8 +327,8 @@
               </div>
             </div>
           </article>
-          <article class = "tile is-child box">
-            <h1 class = "title has-text-centered">
+          <article class = "tile is-child box back">
+            <h1 class = "title has-text-centered head">
               Firebase
             </h1>
             <div class = "content">
@@ -353,10 +357,10 @@
         </div>
     </section>
   </section>
-  <footer class="footer">
+  <footer class="footer" id= "foot">
     <div class="container">
       <div class="content has-text-centered">
-        <p>
+        <p class = "white oswald">
           Ben, Chelsea, Ned, and Rishikesh
         </p>
       </div>
