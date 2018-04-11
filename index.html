@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 <head>
   <!-- Needed Tagd-->
   <meta charset="utf-8" />
@@ -16,19 +16,22 @@
     <title>
       Trail-E
     </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
-    <!-- firebase tag -->
+  <!-- Firebase Library -->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
-  <!-- jQuery -->
+  <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <!-- Google Maps API Library -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOWx2gOOEAzvkQm9I2-OxGzoWTTsy1qgk&callback=initMap"></script>
 
   <!-- Stylesheet tags -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-  <script src="assets/javascript/main.js"></script>
 </head>
+  
 <body>
   <nav class="navbar container" role="navigation" aria-label="main navigation">
     <div class = "navbar-item has-text-centered">
@@ -69,7 +72,7 @@
                   <br> - For Others: Country ISO Abbreviation / City Name
                 </label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Example: NC/Cary, HI/Honolulo, JP/Tokyo or NP/Kathmandu" id="locationInput" id="searchLocation">
+                  <input class="input" type="text" placeholder="Location Input" id="locationInput" id="searchLocation">
                 </div>
               </div>
               <div class="control">
@@ -363,21 +366,8 @@
       </div>
     </div>
   </footer>
+         <script src="assets/javascript/weather.js"></script>
+         <script src="assets/javascript/map.js"></script>
+         <script src="assets/javascript/firebase.js"><script>
 </body>
 </html>
-      <script src="assets/javascript/weather.js"></script>
-      <script src="assets/javascript/map.js"></script>
-      <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyDPtaTELYp2qWeoyfOF3aIXnz_WLEphxB0",
-            authDomain: "project1-92fc5.firebaseapp.com",
-            databaseURL: "https://project1-92fc5.firebaseio.com",
-            projectId: "project1-92fc5",
-            storageBucket: "project1-92fc5.appspot.com",
-            messagingSenderId: "568021023423"
-          };
-          firebase.initializeApp(config);
-        </script>
-
-        </script>
