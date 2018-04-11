@@ -117,10 +117,10 @@ function showPosition(position) {
     
         .then (function(response) {
         console.log(response);
-        console.log(response.results[1].address_components[4].short_name);
-        console.log(response.results[1].address_components[2].long_name);
-        state=response.results[1].address_components[4].short_name;
-        cityName=response.results[1].address_components[2].long_name;
+        console.log(response.results[0].address_components[5].short_name);
+       console.log(response.results[0].address_components[2].long_name);
+       state=response.results[0].address_components[5].short_name;
+       cityName=response.results[0].address_components[2].long_name;
         var city= state+"/"+cityName;
         $("#userLocation").html(cityName +", " +state);
         getCity(city);
