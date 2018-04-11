@@ -1,7 +1,7 @@
     /*Description:
-    used two api URl for weather information: one for current and one for forecast
-    on starting page, gets the user geo location and thus obtained latittude and longitude is 
-    used by another api to get the name of location and passed to weather api.
+    used two api URl for weather information: one for current and one for forecast.
+    On starting page, gets the user geo location and thus obtained latittude and longitude which is 
+    used by another api (google api) to get the name of location and passed to weather api url.
     */
 
 
@@ -64,24 +64,27 @@ function getCity(city) {
         })
         
         .then (function(response) {
-            console.log(response);
-        
-            var x = document.createElement("IMG");
-            x.setAttribute("src", response.current_observation.icon_url);
-            x.setAttribute("width", "70");
-            x.setAttribute("height", "auto");
-            x.setAttribute("alt", "The Pulpit Rock");        
-            console.log(x);        
-            $("#current_condition").html(response.current_observation.weather); 
-            $("#current_img").html(x);
-            $("#current_data").html("<p>Temperature: "+response.current_observation.temperature_string + "</p></br>"+
-                                    "<p>Feels like: "+response.current_observation.feelslike_f+" F (" + response.current_observation.feelslike_c+ " C)</p></br>"+
-                                    "<p>Precipitation today (inch): "+response.current_observation.precip_today_in+ "</p></br>");
-            $("#current_data2").html("<p>Relative Humidity: "+response.current_observation.relative_humidity + "</p></br>"+
-                                    "<p>Wind: "+response.current_observation.wind_string + "</p></br>"+
-                                    "<p>Visibility: "+response.current_observation.visibility_mi + " miles</p></br>"+
+            if (response.current_observation) {
+                    console.log(response);
+                
+                    var x = document.createElement("IMG");
+                    x.setAttribute("src", response.current_observation.icon_url);
+                    x.setAttribute("width", "70");
+                    x.setAttribute("height", "auto");
+                    x.setAttribute("alt", "The Pulpit Rock");        
+                    console.log(x);        
+                    $("#current_condition").html(response.current_observation.weather); 
+                    $("#current_img").html(x);
+                    $("#current_data").html("<p>Temperature: "+response.current_observation.temperature_string + "</p></br>"+
+                                            "<p>Feels like: "+response.current_observation.feelslike_f+" F (" + response.current_observation.feelslike_c+ " C)</p></br>"+
+                                            "<p>Precipitation today (inch): "+response.current_observation.precip_today_in+ "</p></br>");
+                    $("#current_data2").html("<p>Relative Humidity: "+response.current_observation.relative_humidity + "</p></br>"+
+                                            "<p>Wind: "+response.current_observation.wind_string + "</p></br>"+
+                                            "<p>Visibility: "+response.current_observation.visibility_mi + " miles</p></br>"+
                                     "<p>Atmospheric Pressure (mb): "+response.current_observation.pressure_mb+ "</p></br>");
-         
+            } else {
+                $("#weather_box").html("<h1>Can not get the Weather information.Please give the location again in search area. Please write state short name/city name (ex: NC/Cary) for US and country short name/city (ex: NP/Kathmandu) for other countries. </h1>"); 
+            }
         });
 };
 
@@ -118,13 +121,14 @@ function showPosition(position) {
         .then (function(response) {
         console.log(response);
         console.log(response.results[0].address_components[5].short_name);
-       console.log(response.results[0].address_components[2].long_name);
-       state=response.results[0].address_components[5].short_name;
-       cityName=response.results[0].address_components[2].long_name;
+        console.log(response.results[0].address_components[2].long_name);
+        state=response.results[0].address_components[5].short_name;
+        cityName=response.results[0].address_components[2].long_name;
         var city= state+"/"+cityName;
         $("#userLocation").html(cityName +", " +state);
         getCity(city);
         });
+        
 }
 
 $( document ).ready(function() {
