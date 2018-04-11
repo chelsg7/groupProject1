@@ -3,7 +3,7 @@ var lat = 35.779590;
 var lng = -78.638179;
 var latArray = []
 var lngArray = []
-
+var table = document.getElementById("trailNames");
 // Perfoming an AJAX GET request to our queryURL
 // queryURL += '?' + $.param({
 //     'api-key': "sa38JqfW39msh5UFDYOe0Y44RTAEp1jP9K1jsnk52st50qIIvw"
@@ -113,13 +113,14 @@ function showPins(lat, lng) {
             title: response.places[i].name
           })
           console.log(marker.position)
-          $("#names").append(response.places[i].name + "<br>")
-          $("#location").append(response.places[i].city + ", " + response.places[i].state + "<br>")
-          $("#directions").append(response.places[i].directions + "<br>")
+          $("#names"+i).append(response.places[i].name)
+          $("#location"+i).append(response.places[i].city + ", " + response.places[i].state)
+          $("#direction"+i).append(response.places[i].directions)
       }
     }
 })
     } 
+
 
 
 
@@ -212,3 +213,4 @@ $(document).ready(function () {
 
 
 // }
+
