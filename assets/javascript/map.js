@@ -114,9 +114,9 @@ function showPins(lat, lng) {
             title: response.places[i].name
           })
           console.log(marker.position)
-          $("#names").append(response.places[i].name + "<br>")
-          $("#location").append(response.places[i].city + ", " + response.places[i].state + "<br>")
-          $("#directions").append(response.places[i].directions + "<br>")
+          $("#names"+i).append(response.places[i].name)
+          $("#location"+i).append(response.places[i].city + ", " + response.places[i].state)
+          $("#direction"+i).append(response.places[i].directions)
       }
     }
 })
