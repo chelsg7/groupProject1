@@ -10,9 +10,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 
   <!-- FontAwesome -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Gugi|Oswald" rel="stylesheet">
     <title>
       Trail-E
     </title>
@@ -35,23 +37,23 @@
 <body>
   <nav class="navbar container" role="navigation" aria-label="main navigation">
     <div class = "navbar-item has-text-centered">
-      <h1 class="title">
+      <h1 class="title has-text-centered">
         TRAIL-E
       </h1>
     </div>
-    <div class = "navbar-item">
+    <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet">
       <h2 class="subtitle">
         You are
         <strong>
-          Here:
+          HERE:
         </strong>
         <span id = "userLocation"></span>
       </h2>
     </div>
-    <a class="navbar-item navbar-end" href="index.html">
+    <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald" href="index.html">
       Home
     </a>
-    <a class="navbar-item navbar-end" href="about.html">
+    <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald" href="about.html">
       About
     </a> 
   </nav>
@@ -60,7 +62,7 @@
       <div class="tile is-ancestor">
         <div class = "tile is-vertical is-parent is-6">
           <article class = "tile is-child box has-text-centered">
-            <h1 class = "title">
+            <h1 class = "title gugi">
               Search
             </h1>
             <div class = "content">
@@ -82,7 +84,7 @@
               </div>
             </div>
         </article>
-        <article class = "tile is-child box">
+        <article class = "tile is-child box has-text-centered">
           <h1 class = "title">
             Map
           </h1>
@@ -95,20 +97,20 @@
           </div>
         </article>
         <article class = "tile is-child box">
-          <h1 class = "title">
+          <h1 class = "title has-text-centered">
             Trails List
           </h1>
           <div class = "content">
             <table class="table is-bordered" id="trailNames">
               <thead>
                 <tr>
-                  <th>
+                  <th class = "has-text-centered">
                     Trail Name
                   </th>
-                  <th>
+                  <th class = "has-text-centered">
                     Location
                   </th>
-                  <th>
+                  <th class = "has-text-centered">
                     Directions
                   </th>
                 </tr>
@@ -131,23 +133,32 @@
       </div> <!-- end one div -->
       <div class = "tile is-vertical is-parent is-6">
         <article class = "tile is-child box">
-          <h1 class = "title">
+          <h1 class = "title has-text-centered">
             Weather
           </h1>
           <div class = "content">
             <div id="currentWeather">
-              <p>
-                <strong>Current Weather</strong>
-              </p>
+              <h2 class = "has-text-centered subtitle">
+                  Current Weather
+              </h2>
               <div class = "columns">
-              <div class= "column">
+              <div class= "column has-text-centered">
+                <p>
+                  Current
+                </p>
                 <div id="current_condition"></div>
                 <div id="current_img"></div>
               </div>
-              <div class ="column">
+              <div class ="column has-text-centered">
+                <p>
+                  Current Temperature
+                </p>
                 <div id="current_data"></div>                 
               </div>
-              <div class ="column">
+              <div class ="column has-text-centered">
+                <p>
+                  Current Conditions
+                </p>
                 <div id="current_data2"></div>                 
               </div>
             </div>
@@ -155,21 +166,21 @@
           
           <div class = "content">
             <div id="forecastWeather">
-                <p>
-                 <strong>Forecast</strong> 
-                </p>
+                <h2 class = "has-text-centered subtitle">
+                  Upcoming Weather Forecast
+              </h2>
             <div class = "columns">
-            <div class= "column">
+            <div class= "column has-text-centered">
               <div id="duration1"></div>
               <div id="forecat_first"></div>
               <div id="forecat_first_description"></div>
             </div>
-            <div class ="column">
+            <div class ="column has-text-centered">
               <div id="duration2"></div>
               <div id="forecat_second"></div>
               <div id="forecat_second_description"></div>               
             </div>
-              <div class ="column">
+              <div class ="column has-text-centered">
                 <div id="duration3"></div>
                 <div id="forecat_third"></div>
                 <div id="forecat_third_description"></div>             
@@ -178,7 +189,7 @@
             </div>
         </article>
         <article class = "tile is-child box">
-          <h1 class = "title">
+          <h1 class = "title has-text-centered">
             User Input Form
           </h1>
           <div class = "content has-text-centered">
@@ -313,43 +324,28 @@
             </div>
           </article>
           <article class = "tile is-child box">
-            <h1 class = "title">
+            <h1 class = "title has-text-centered">
               Firebase
             </h1>
             <div class = "content">
-              <table class="table" id="firebaseTable">
+              <table class="table is-bordered" id="firebaseTable">
                 <thead>
                   <tr>
-                    <th>
+                    <th class = "has-text-centered">
                       Name
                     </th>
-                    <th>
+                    <th class = "has-text-centered">
                       Trail Name
                     </th>
-                    <th>
+                    <th class = "has-text-centered">
                       Rating
                     </th>
-                    <th>
+                    <th class= "has-text-centered">
                       Comments
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      Test User Name
-                    </td>
-                    <td>
-                      Test Trail Name
-                    </td>
-                    <td>
-                      Test Rating
-                    </td>
-                    <td>
-                      Ice cream macaroon jelly donut apple pie halvah liquorice donut biscuit. Bonbon tart liquorice toffee donut candy canes. Chupa chups dragée jelly bear claw.
-                      Marshmallow sugar plum icing danish brownie chocolate cake pudding sesame snaps. Chocolate bar muffin sugar plum dragée gummies wafer. Macaroon cupcake jelly dragée candy chocolate bar.
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -361,13 +357,13 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
-          Footer Info will Go Here
+          Ben, Chelsea, Ned, and Rishikesh
         </p>
       </div>
     </div>
   </footer>
-         <script src="assets/javascript/weather.js"></script>
-         <script src="assets/javascript/map.js"></script>
-         <script src="assets/javascript/firebase.js"></script>
+  <script src="assets/javascript/weather.js"></script>
+  <script src="assets/javascript/map.js"></script>
+  <script src="assets/javascript/firebase.js"></script>
 </body>
 </html>
