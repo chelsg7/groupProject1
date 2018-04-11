@@ -1,3 +1,30 @@
+
+.navbar {
+    background-color: #428A01;
+}
+#foot {
+    background-color: #3A001E;
+}
+.white {
+    color: #EEE5E9;
+}
+.back {
+    background-color: #BEA6A0;
+}
+.head {
+    color : #005700;
+}
 #map {
     height: 400px;
+}
+.title {
+    font-family: "Gugi", cursive;
+}
+
+.oswald {
+    font-family: "Oswald", sans-serif;
+}
+
+.subtitle {
+    font-family: "Oswald", sans-serif;
 }
