@@ -126,18 +126,18 @@ $("#search").submit(function(event){
     
    
 });
-
-function getLocation() {
+//map.js has this function
+// function getLocation() {
    
-        navigator.geolocation.getCurrentPosition(showPosition);        
-}
+//         navigator.geolocation.getCurrentPosition(showPosition);        
+// }
  
 
 function showPosition(position) {
     var getLatitude = position.coords.latitude;
     var getLongitude = position.coords.longitude;
-    console.log(getLatitude);
-    console.log(getLongitude);
+    //console.log(getLatitude);
+   // console.log(getLongitude);
     var apiCode = "AIzaSyBxbpX0AuckHtRbiG6fA8EFQoX6WDeZYFk";
     //var queryURL1 = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + getLatitude+"," + getLongitude+ "&sensor=true";
     var queryURL1 = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + getLatitude + "," + getLongitude + "&key=" + apiCode;
@@ -161,16 +161,16 @@ function showPosition(position) {
         
 }
 
-$( document ).ready(function() {
+// $( document ).ready(function() {
 
-    if (navigator.geolocation) {
-         getLocation();
-      //   getCity();
-    }
-    else {
-        console.log("not available");
+//     if (navigator.geolocation) {
+//          getLocation();
+//       //   getCity();
+//     }
+//     else {
+//         console.log("not available");
     
-    }     
+//     }     
 
-});
+// });
 

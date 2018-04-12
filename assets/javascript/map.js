@@ -60,13 +60,15 @@ function initMap() {
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
     navigator.geolocation.getCurrentPosition(function (position) {
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
       showPins(pos.lat, pos.lng)
-      $("#userLocation").text("Latitude: " + pos.lat + ", Longitude: " + pos.lng)
+     //(Weather.js has this with city name) 
+     //$("#userLocation").text("Latitude: " + pos.lat + ", Longitude: " + pos.lng)
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       infoWindow.open(map);
