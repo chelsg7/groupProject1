@@ -8,7 +8,7 @@ var map, infoWindow;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 35.779, lng: -78.638 },
-    zoom: 8
+    zoom: 7
   });
   infoWindow = new google.maps.InfoWindow;
 
@@ -49,7 +49,7 @@ function showPins(lat, lng) {
     url: queryURL,
     dataType: 'json',
     headers: {
-      "X-Mashape-Key": "sa38JqfW39msh5UFDYOe0Y44RTAEp1jP9K1jsnk52st50qIIvw",
+      "X-Mashape-Key": "57EkejgMXbmshEIvNY0XNJFIkd7qp12CTEjjsnqBnPXZDu9LdH",
       "Accept": "text/plain"
     },
     method: "get",
