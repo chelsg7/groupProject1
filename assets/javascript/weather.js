@@ -107,7 +107,7 @@ function getCity(city) {
                                             "<p>Visibility: "+response.current_observation.visibility_mi + " miles</p></br>"+
                                     "<p>Atmospheric Pressure (mb): "+response.current_observation.pressure_mb+ "</p></br>");
             } else {
-                $("#current_condition").text("Can not get the Weather information.Please re-enter city and state short name for United States and country short name for other countries in state. Exampe for US: City:Honululu and State: HI. Exaple for other countries: City:Kathmandu and state:NP"); 
+                $("#current_condition").text("Cannot get the Weather information. Please re-enter city and state abbreviation (for United States) OR City and Country Abbreviation for other countries. Example for USA: City: Honululu and State: HI. Example for other countries: City: Kathmandu and state: NP"); 
                 $("#current_img").text("");
                 $("#current_data").text("");
                 $("#current_data2").text("");
