@@ -2,6 +2,14 @@
     used two api URl for weather information: one for current and one for forecast.
     On starting page, gets the user geo location and thus obtained latittude and longitude which is 
     used by another api (google api) to get the name of location and passed to weather api url.
+    Api used from: Weather UnderGround API
+    Used two url: One for current weather condition and another for forecast.    
+    http://api.wunderground.com/api/{key}/forecast/q/"+city+".json"
+    http://api.wunderground.com/api/{key}/conditions/q/"+city+".json
+    city format: state short name/city full name (eg; HI/Honolulu)
+    The response gives difference parameters of current weather information and forecast. We have used icons,
+    short description about present condition, some parameters and forecast for three phases (day-night-next day or night-nextday-next night)
+    The main problem was to pass the city format to the url and fixed input area in the format that is accepted by API url.
     */
 
 
@@ -99,7 +107,7 @@ function getCity(city) {
                                             "<p>Visibility: "+response.current_observation.visibility_mi + " miles</p></br>"+
                                     "<p>Atmospheric Pressure (mb): "+response.current_observation.pressure_mb+ "</p></br>");
             } else {
-                $("#current_condition").text("Can not get the Weather information.Please give the location again in search area. Please write state short name/city name (ex: NC/Cary) for US and country short name/city (ex: NP/Kathmandu) for other countries."); 
+                $("#current_condition").text("Can not get the Weather information.Please re-enter city and state short name for United States and country short name for other countries in state. Exampe for US: City:Honululu and State: HI. Exaple for other countries: City:Kathmandu and state:NP"); 
                 $("#current_img").text("");
                 $("#current_data").text("");
                 $("#current_data2").text("");
@@ -109,10 +117,12 @@ function getCity(city) {
         });
 };
 
-$("#userSearch").click(function(){
-    city= $("#locationInput").val().trim();
-    $("#userLocation").html("");
-    $("#userLocation").html(city);
+$("#search").submit(function(event){
+    event.preventDefault();
+    
+    state2= $("#stateInput").val().trim();
+    place= $("#cityInput").val().trim();
+    city = state2+"/"+place;
     getCity(city);
     
    
