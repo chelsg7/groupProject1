@@ -99,15 +99,14 @@ function getCity(city) {
                     console.log(x);        
                     $("#current_condition").html(response.current_observation.weather); 
                     $("#current_img").html(x);
-                    $("#current_data").html("<p>Temperature: "+response.current_observation.temperature_string + "</p></br>"+
-                                            "<p>Feels like: "+response.current_observation.feelslike_f+" F (" + response.current_observation.feelslike_c+ " C)</p></br>"+
+                    $("#current_data").html("<p>Temperature: "+response.current_observation.temperature_string + "</p></br>"+                                           
                                             "<p>Precipitation today (inch): "+response.current_observation.precip_today_in+ "</p></br>");
                     $("#current_data2").html("<p>Relative Humidity: "+response.current_observation.relative_humidity + "</p></br>"+
                                             "<p>Wind: "+response.current_observation.wind_string + "</p></br>"+
                                             "<p>Visibility: "+response.current_observation.visibility_mi + " miles</p></br>"+
                                     "<p>Atmospheric Pressure (mb): "+response.current_observation.pressure_mb+ "</p></br>");
             } else {
-                $("#current_condition").text("Cannot get the Weather information. Please re-enter city and state abbreviation (for United States) OR City and Country Abbreviation for other countries. Example for USA: City: Honululu and State: HI. Example for other countries: City: Kathmandu and state: NP"); 
+                $("#current_condition").text("Cannot get the Weather information. Please re-enter city and state/county. If you still can not get weather information, please try with different name or nearby city"); 
                 $("#current_img").text("");
                 $("#current_data").text("");
                 $("#current_data2").text("");
@@ -151,10 +150,10 @@ function showPosition(position) {
     
         .then (function(response) {
         console.log(response);
-        console.log(response.results[0].address_components[5].short_name);
+        console.log(response.results[0].address_components[5].long_name);
         console.log(response.results[0].address_components[2].long_name);
-        state=response.results[0].address_components[5].short_name;
-        cityName=response.results[0].address_components[2].long_name;
+        state=response.results[0].address_components[6].long_name;
+        cityName=response.results[0].address_components[3].long_name;
         var city= state+"/"+cityName;
         $("#userLocation").html(cityName +", " +state);
         getCity(city);
