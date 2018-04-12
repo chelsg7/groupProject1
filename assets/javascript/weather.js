@@ -18,39 +18,54 @@ function getCity(city) {
         })
         
         .then (function(response) {
-            console.log(queryURL);
-            console.log(response);
-            console.log(response.forecast.txt_forecast.date);
-            var x = document.createElement("IMG");
-            x.setAttribute("src", response.forecast.txt_forecast.forecastday[0].icon_url);
-            x.setAttribute("width", "70");
-            x.setAttribute("height", "auto");
-            x.setAttribute("alt", "The Pulpit Rock");            
-            console.log(x);
-            $("#duration1").html(response.forecast.txt_forecast.forecastday[0].title);
-            $("#forecat_first").html(x);
-            $("#forecat_first_description").html(response.forecast.txt_forecast.forecastday[0].fcttext);
-            
-            var y = document.createElement("IMG");
-            y.setAttribute("src", response.forecast.txt_forecast.forecastday[1].icon_url);
-            y.setAttribute("width", "70");
-            y.setAttribute("height", "auto");
-            y.setAttribute("alt", "The Pulpit Rock");       
-            console.log(y);
-            $("#duration2").html(response.forecast.txt_forecast.forecastday[1].title);
-            $("#forecat_second").html(y);
-            $("#forecat_second_description").html(response.forecast.txt_forecast.forecastday[1].fcttext);
-            
-            var z = document.createElement("IMG");
-            z.setAttribute("src", response.forecast.txt_forecast.forecastday[2].icon_url);
-            z.setAttribute("width", "70");
-            z.setAttribute("height", "auto");
-            z.setAttribute("alt", "The Pulpit Rock");       
-            console.log(z);
-            $("#duration3").html(response.forecast.txt_forecast.forecastday[2].title);
-            $("#forecat_third").html(z);
-            $("#forecat_third_description").html(response.forecast.txt_forecast.forecastday[2].fcttext);
-        
+            //console.log(response.forecast.txt_forecast.date);
+            if (response.forecast) {
+                console.log("in first if");
+
+                    console.log(queryURL);
+                    console.log(response);
+                    console.log(response.forecast.txt_forecast.date);
+                    var x = document.createElement("IMG");
+                    x.setAttribute("src", response.forecast.txt_forecast.forecastday[0].icon_url);
+                    x.setAttribute("width", "70");
+                    x.setAttribute("height", "auto");
+                    x.setAttribute("alt", "The Pulpit Rock");            
+                    console.log(x);
+                    $("#duration1").html(response.forecast.txt_forecast.forecastday[0].title);
+                    $("#forecat_first").html(x);
+                    $("#forecat_first_description").html(response.forecast.txt_forecast.forecastday[0].fcttext);
+                    
+                    var y = document.createElement("IMG");
+                    y.setAttribute("src", response.forecast.txt_forecast.forecastday[1].icon_url);
+                    y.setAttribute("width", "70");
+                    y.setAttribute("height", "auto");
+                    y.setAttribute("alt", "The Pulpit Rock");       
+                    console.log(y);
+                    $("#duration2").html(response.forecast.txt_forecast.forecastday[1].title);
+                    $("#forecat_second").html(y);
+                    $("#forecat_second_description").html(response.forecast.txt_forecast.forecastday[1].fcttext);
+                    
+                    var z = document.createElement("IMG");
+                    z.setAttribute("src", response.forecast.txt_forecast.forecastday[2].icon_url);
+                    z.setAttribute("width", "70");
+                    z.setAttribute("height", "auto");
+                    z.setAttribute("alt", "The Pulpit Rock");       
+                    console.log(z);
+                    $("#duration3").html(response.forecast.txt_forecast.forecastday[2].title);
+                    $("#forecat_third").html(z);
+                    $("#forecat_third_description").html(response.forecast.txt_forecast.forecastday[2].fcttext);
+            }else{
+                console.log("inside else stmt");
+                    $("#duration1").text("");
+                    $("#forecat_first").text("");
+                    $("#forecat_first_description").text("");
+                    $("#duration2").text("");
+                    $("#forecat_second").text("");
+                    $("#forecat_second_description").text("");
+                    $("#duration3").text("");
+                    $("#forecat_third").text("");
+                    $("#forecat_third_description").text("");
+            }
         });
         
     //API url (use one of the two.)
@@ -65,6 +80,7 @@ function getCity(city) {
         
         .then (function(response) {
             if (response.current_observation) {
+               
                     console.log(response);
                 
                     var x = document.createElement("IMG");
@@ -83,8 +99,13 @@ function getCity(city) {
                                             "<p>Visibility: "+response.current_observation.visibility_mi + " miles</p></br>"+
                                     "<p>Atmospheric Pressure (mb): "+response.current_observation.pressure_mb+ "</p></br>");
             } else {
-                $("#weather_box").html("<h1>Can not get the Weather information.Please give the location again in search area. Please write state short name/city name (ex: NC/Cary) for US and country short name/city (ex: NP/Kathmandu) for other countries. </h1>"); 
+                $("#current_condition").text("Can not get the Weather information.Please give the location again in search area. Please write state short name/city name (ex: NC/Cary) for US and country short name/city (ex: NP/Kathmandu) for other countries."); 
+                $("#current_img").text("");
+                $("#current_data").text("");
+                $("#current_data2").text("");
+                
             }
+
         });
 };
 
