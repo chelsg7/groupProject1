@@ -106,7 +106,7 @@ function getCity(city) {
                                             "<p>Visibility: "+response.current_observation.visibility_mi + " miles</p></br>"+
                                     "<p>Atmospheric Pressure (mb): "+response.current_observation.pressure_mb+ "</p></br>");
             } else {
-                $("#current_condition").text("Cannot get the Weather information. Please re-enter City and State OR for outside USA, enter Country. If you still can not get weather information, please try with different name or nearby city"); 
+                $("#current_condition").text("Cannot get the Weather information. Please re-enter City and State. If you still can not get weather information, please try with different name or nearby city"); 
                 $("#current_img").text("");
                 $("#current_data").text("");
                 $("#current_data2").text("");

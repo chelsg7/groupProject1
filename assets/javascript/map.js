@@ -118,14 +118,28 @@ function userSearch(city, state) {
         $("#location"+i).html(response.places[i].city + ", " + response.places[i].state)
         $("#direction"+i).html(response.places[i].directions)
     }
+    if(response.places.length < 10) {
+      var i = response.places.length;
+      for (i; i<10; i++) {
+        $("#names"+i).empty()
+        $("#location"+i).empty()
+        $("#direction"+i).empty()
+      }
+    }
   }})}
-    
+
     $(document).ready(function () {
-      $("#search").submit(function(event) {
+      $("#search").on("click", function(event) {
         event.preventDefault();
         var cityInput = ($(".inputCity").val().trim());
         var stateInput = ($(".inputState").val().trim());
         console.log(cityInput + stateInput);
-        userSearch(cityInput,stateInput)
+        if ((stateInput != "") && cityInput != "")
+        {
+          userSearch(cityInput,stateInput)
+        }
+        else{
+          $("#alert").html("Please enter a city and a state")
+        }
       });
       })

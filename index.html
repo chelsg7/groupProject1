@@ -72,21 +72,14 @@
             </h1>
             <div class = "content">
               <!-- Need to update these lines-->
-              <div class="field">
-                <form id="search">
+              <div class="field" id="search">
                 <div class="control" id="search">
                   <input class="inputCity" type="text" placeholder="City" id="cityInput">
-                  <input class="inputState" type="text" placeholder="State OR Country" id="stateInput">
-                  <input type="submit" value="Go">
-                </form>
+                  <input class="inputState" type="text" placeholder="State" id="stateInput">
+                  <input type="submit" id="search" value="Go">
                 </div>
               </div>
-                <!-- this is depreciated in bulma-->
-                <!-- <form id="search">
-                  <input class="inputCity" type="text" placeholder="City" id="cityInput">
-                  <input class="inputState" type="text" placeholder="State OR Country" id="stateInput">
-                  <input type="submit" value="Go">
-                </form> -->
+              <div id="alert"></div>
             </div>
         </article>
         <article class = "tile is-child box has-text-centered back">
