@@ -124,15 +124,20 @@ function userSearch(city, state) {
         $("#direction" + i).html(response.places[i].directions)
       }
     }
-  })
-}
+  }})}
 
-$(document).ready(function () {
-  $("#search").submit(function (event) {
-    event.preventDefault();
-    var cityInput = ($(".inputCity").val().trim());
-    var stateInput = ($(".inputState").val().trim());
-    console.log(cityInput + stateInput);
-    userSearch(cityInput, stateInput)
-  });
-})
+    $(document).ready(function () {
+      $("#search").on("click", function(event) {
+        event.preventDefault();
+        var cityInput = ($(".inputCity").val().trim());
+        var stateInput = ($(".inputState").val().trim());
+        console.log(cityInput + stateInput);
+        if ((stateInput != "") && cityInput != "")
+        {
+          userSearch(cityInput,stateInput)
+        }
+        else{
+          $("#alert").html("Please enter a city and a state")
+        }
+      });
+      })
