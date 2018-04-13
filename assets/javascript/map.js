@@ -3,6 +3,7 @@ var lat = 35.779590;
 var lng = -78.638179;
 var latArray = []
 var lngArray = []
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 35.851, lng: -78.796 },
