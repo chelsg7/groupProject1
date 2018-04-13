@@ -116,7 +116,7 @@ function getCity(city) {
         });
 };
 
-$("#search").submit(function(event){
+$("#search").on("click",function(event){
     event.preventDefault();
     
     state2= $("#stateInput").val().trim();

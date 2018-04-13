@@ -134,12 +134,13 @@ function userSearch(city, state) {
         var cityInput = ($(".inputCity").val().trim());
         var stateInput = ($(".inputState").val().trim());
         console.log(cityInput + stateInput);
-        if ((stateInput != "") && cityInput != "")
+        if ((stateInput != "") && (cityInput != ""))
         {
           userSearch(cityInput,stateInput)
+          $("#alert").empty()
         }
-        else{
-          $("#alert").html("Please enter a city and a state")
+        else if ((stateInput === "") || (cityInput === "")){
+          $("#alert").html("Please enter a city and a state.")
         }
       });
       })
