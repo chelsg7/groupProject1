@@ -28,7 +28,7 @@ function getCity(city) {
         .then (function(response) {
             //console.log(response.forecast.txt_forecast.date);
             if (response.forecast) {
-                console.log("in first if");
+               
 
                     console.log(queryURL);
                     console.log(response);
@@ -63,7 +63,7 @@ function getCity(city) {
                     $("#forecat_third").html(z);
                     $("#forecat_third_description").html(response.forecast.txt_forecast.forecastday[2].fcttext);
             }else{
-                console.log("inside else stmt");
+                
                     $("#duration1").text("");
                     $("#forecat_first").text("");
                     $("#forecat_first_description").text("");
@@ -116,21 +116,22 @@ function getCity(city) {
         });
 };
 
-$("#search").submit(function(event){
+$("#search").click(function(event){
     event.preventDefault();
     
     state2= $("#stateInput").val().trim();
     place= $("#cityInput").val().trim();
     city = state2+"/"+place;
+    console.log(city);
     getCity(city);
     
    
 });
-//map.js has this function
-// function getLocation() {
+
+function getLocation() {
    
-//         navigator.geolocation.getCurrentPosition(showPosition);        
-// }
+        navigator.geolocation.getCurrentPosition(showPosition);        
+}
  
 
 function showPosition(position) {
@@ -161,16 +162,16 @@ function showPosition(position) {
         
 }
 
-// $( document ).ready(function() {
+$( document ).ready(function() {
 
-//     if (navigator.geolocation) {
-//          getLocation();
-//       //   getCity();
-//     }
-//     else {
-//         console.log("not available");
+    if (navigator.geolocation) {
+         getLocation();
+      //   getCity();
+    }
+    else {
+        console.log("not available");
     
-//     }     
+    }     
 
-// });
+});
 
