@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 
   <!-- FontAwesome -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
   <!-- Google Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Gugi|Oswald" rel="stylesheet">
@@ -19,13 +19,7 @@
     </title>
 
   <!-- Firebase Library -->
-  <script defer src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-
-  <!-- jQuery Library -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
-  <!-- Google Maps API Library -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOWx2gOOEAzvkQm9I2-OxGzoWTTsy1qgk&callback=initMap"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
   <!-- Stylesheet tags -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
@@ -35,34 +29,34 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class = "container">
       <div class = "navbar-item has-text-centered">
-        <h1 class="title has-text-centered white">
+        <h1 class="title has-text-centered light is-size-1">
           <!-- <i class="fas fa-map-signs"></i>
           &nbsp -->
           TRAIL-E
         </h1>
       </div>
-      <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet">
-        <h2 class="subtitle white">
+      <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet is-size-4">
+        <h2 class="subtitle light">
             <i class="fas fa-map-marker-alt"></i>
             &nbsp;
             You are Here:
           <!-- <span id = "userLocation"></span> -->
         </h2>
       </div>
-      <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet">
-        <h2 class="subtitle white">
+      <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet is-size-4">
+        <h2 class="subtitle light">
           <span id = "userLocation"></span>
         </h2>
       </div>
-      <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald white" href="index.html">
+      <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald light is-size-4" href="index.html">
         <i class="fas fa-home"></i>
         &nbsp;
-        Home
+        HOME
       </a>
-      <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald white" href="about.html">
+      <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald light is-size-4" href="about.html">
           <i class="fas fa-book"></i>
           &nbsp;
-        About
+        ABOUT
       </a> 
     </div>
   </nav>
@@ -74,20 +68,32 @@
             <h1 class = "title head">
                 <i class="fab fa-searchengin"></i>
                 &nbsp;
-                Search
+                SEARCH FOR A LOCATION
             </h1>
-            <form id="search">
-                <input class="inputCity" type="text" placeholder="City" id="cityInput">
-                <input class="inputState" type="text" placeholder="State" id="stateInput">
-                <input class="inputState" type="text" placeholder="Country" id="countryInput">
-                <input type="submit" value="Go">
-              </form>
+            <div class = "content">
+              <!-- Need to update these lines-->
+              <div class="field">
+                <form id="search">
+                <div class="control" id="search">
+                  <input class="inputCity" type="text" placeholder="City" id="cityInput">
+                  <input class="inputState" type="text" placeholder="State OR Country" id="stateInput">
+                  <input type="submit" value="Go">
+                </form>
+                </div>
+              </div>
+                <!-- this is depreciated in bulma-->
+                <!-- <form id="search">
+                  <input class="inputCity" type="text" placeholder="City" id="cityInput">
+                  <input class="inputState" type="text" placeholder="State OR Country" id="stateInput">
+                  <input type="submit" value="Go">
+                </form> -->
+            </div>
         </article>
         <article class = "tile is-child box has-text-centered back">
           <h1 class = "title head">
               <i class="far fa-map"></i>
               &nbsp;
-              Map
+              WHERE ARE THE TRAILS AT?
           </h1>
           <div class = "content">
             <div id="map">
@@ -101,7 +107,7 @@
           <h1 class = "title has-text-centered head">
               <i class="fas fa-location-arrow"></i>
               &nbsp;
-              Trails List
+              WHAT TRAILS ARE NEARBY?
           </h1>
           <div class = "content">
             <table cellspacing="10" class="table is-bordered is-striped is-fullwidth" id="trailNames">
@@ -205,22 +211,22 @@
         </article>
       </div> <!-- end one div -->
       <div class = "tile is-vertical is-parent is-6">
-        <article class = "tile is-child box back">
+        <article class = "tile is-child box back" id="weather_box">
           <h1 class = "title has-text-centered head">
               <i class="far fa-sun"></i>
               &nbsp;
-              Weather
+              HOW'S THE WEATHER?
           </h1>
           <div class = "content">
             <div id="currentWeather">
-              <h2 class = "has-text-centered subtitle">
-                  Current Weather
+              <h2 class = "has-text-centered subtitle oswald">
+                  CURRENT WEATHER
               </h2>
               <div class = "columns">
               <div class= "column has-text-centered">
                 <div id="current_condition"></div>
                 <div id="current_img"></div>
-                <div id="current_data"></div>  
+                <div id="current_data"></div> 
               </div>
               <div class ="column has-text-centered">
                 <div id="current_data2"></div>                 
@@ -230,8 +236,8 @@
           
           <div class = "content">
             <div id="forecastWeather">
-                <h2 class = "has-text-centered subtitle">
-                  Upcoming Weather Forecast
+                <h2 class = "has-text-centered subtitle oswald">
+                  UPCOMING WEATHER
               </h2>
             <div class = "columns">
             <div class= "column has-text-centered">
@@ -256,7 +262,7 @@
           <h1 class = "title has-text-centered head">
               <i class="far fa-keyboard"></i>
               &nbsp;
-              User Input Form
+              HOW WAS YOUR TRAIL?
           </h1>
           <div class = "content has-text-centered">
             <div class="field">
@@ -275,111 +281,20 @@
                 <input class="input" type="text" placeholder="Trail input" id="trailInput">
               </div>
             </div>
-            <div class="control">
-              <label class="radio">
-                <input type="radio" name="answer">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star-half"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="answer">
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </label>
+            <div class="field">
+              <label class="label">
+                Enter Rating 1-10
+              </label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Rating input" id="rating">
               </div>
+            </div>
               <div class="field">
                 <label class="label">
                   Message
                 </label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="Comments Go Here" id = "userComments">
-                  </textarea>
+                  <textarea class="textarea" placeholder="Comments Go Here" id = "userComments"></textarea>
                 </div>
               </div>
               <div class="control">
@@ -393,7 +308,7 @@
             <h1 class = "title has-text-centered head">
                 <i class="fas fa-table"></i>
                 &nbsp;
-                Firebase
+                USER COMMENTS
             </h1>
             <div class = "content">
               <table class="table is-bordered" id="firebaseTable">
@@ -425,7 +340,7 @@
   <footer class="footer" id= "foot">
     <div class="container">
       <div class="content has-text-centered">
-        <p class = "white oswald">
+        <p class = "light oswald">
             <i class="fas fa-map-signs"></i>
             &nbsp; 
           Ben, Chelsea, Ned, and Rishikesh
@@ -435,9 +350,12 @@
       </div>
     </div>
   </footer>
-  <script defer src="assets/javascript/map.js"></script>
-  <script defer src="assets/javascript/firebase.js"></script>
-  <script defer src="assets/javascript/weather.js"></script>
-
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Google Maps API Library -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_Dr6eXQfRZGEtWV_8hUBOQllZ0behiIQ&callback=initMap"></script>
+  <script src="assets/javascript/map.js"></script>
+  <script src="assets/javascript/weather.js"></script>
+  <script src="assets/javascript/firebase.js"></script>
 </body>
 </html>

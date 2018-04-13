@@ -1,18 +1,20 @@
-
+#bodyBack {
+    background-color: #003835;
+}
 .navbar {
-    background-color: #428A01;
+    background-color: #44836B;
 }
 #foot {
-    background-color: #3A001E;
+    background-color: #006863;
 }
-.white {
-    color: #EEE5E9;
+.light {
+    color: #E7FEFE;
 }
 .back {
-    background-color: #BEA6A0;
+    background-color: #95B1AE;
 }
 .head {
-    color : #005700;
+    color : #005768;
 }
 #map {
     height: 400px;

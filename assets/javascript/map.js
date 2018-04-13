@@ -71,9 +71,9 @@ function showPins(lat, lng) {
           title: response.places[i].name
         })
         console.log(marker.position)
-        $("#names" + i).append(response.places[i].name)
-        $("#location" + i).append(response.places[i].city + ", " + response.places[i].state)
-        $("#direction" + i).append(response.places[i].directions)
+        $("#names" + i).html(response.places[i].name)
+        $("#location" + i).html(response.places[i].city + ", " + response.places[i].state)
+        $("#direction" + i).html(response.places[i].directions)
       }
     }
   })
@@ -129,5 +129,3 @@ function userSearch(city, state) {
         userSearch(cityInput,stateInput)
       });
       })
-
-
