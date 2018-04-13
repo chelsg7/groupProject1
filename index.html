@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <!-- Needed Tagd-->
+  <title>Trail-E</title>
+  <!-- Needed Tags-->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,13 +15,13 @@
 
   <!-- Google Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Gugi|Oswald" rel="stylesheet">
-    <title>
-      Trail-E
-    </title>
 
   <!-- Firebase Library -->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Google Maps API Library -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAemEquulCMSSvxaY9s2bdIowa0QIaOwuM&callback=initMap"></script>
   <!-- Stylesheet tags -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
@@ -31,7 +32,6 @@
       <div class = "navbar-item has-text-centered">
         <h1 class="title has-text-centered light is-size-1">
           <!-- <i class="fas fa-map-signs"></i>
-          &nbsp -->
           TRAIL-E
         </h1>
       </div>
@@ -72,8 +72,8 @@
             </h1>
             <div class = "content">
               <!-- Need to update these lines-->
-              <div class="field" id="search">
-                <div class="control" id="search">
+              <div class="field">
+                <div class="control">
                   <input class="inputCity" type="text" placeholder="City" id="cityInput">
                   <input class="inputState" type="text" placeholder="State" id="stateInput">
                   <input type="submit" id="search" value="Go">
@@ -321,9 +321,8 @@
                     </th>
                   </tr>
                 </thead>
-                <tbody>
-                </tbody>
-              </table>
+              </tbody>
+            </table>
             </div>
           </article>
         </div>
@@ -343,10 +342,7 @@
       </div>
     </div>
   </footer>
-  <!-- jQuery Library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Google Maps API Library -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_Dr6eXQfRZGEtWV_8hUBOQllZ0behiIQ&callback=initMap"></script>
+
   <script src="assets/javascript/map.js"></script>
   <script src="assets/javascript/weather.js"></script>
   <script src="assets/javascript/firebase.js"></script>
