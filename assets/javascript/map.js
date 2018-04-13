@@ -5,7 +5,7 @@ var latArray = []
 var lngArray = []
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -34.397, lng: 150.644 },
+    center: { lat: 35.851, lng: -78.796 },
     zoom: 6
   });
   infoWindow = new google.maps.InfoWindow;
@@ -54,7 +54,7 @@ function showPins(lat, lng) {
     contentType: 'application/json; charset=utf-8',
     success: function (response) {
       console.log(response);
-      var myLatLng = { lat: 0, lng: 0 };
+      var myLatLng = { lat: 35.851, lng: -78.796 };
       var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 35.851, lng: -78.796 },
         zoom: 10
@@ -90,7 +90,7 @@ function userSearch(city, state) {
   contentType: 'application/json; charset=utf-8',
   success: function (response) {
     console.log(response);
-    var myLatLng = { lat: 0, lng: 0};
+    var myLatLng = { lat: 35.851, lng: -78.796 };
     bounds  = new google.maps.LatLngBounds();
     var map = new google.maps.Map(document.getElementById('map'), {
       center: { lat: 35.851, lng: -78.796 },
