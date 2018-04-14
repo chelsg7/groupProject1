@@ -155,8 +155,8 @@ function showPosition(position) {
         console.log(response.results[0].address_components[2].long_name);
         console.log(response.results[0].address_components[6].long_name);
         console.log(response.results[0].address_components[3].long_name);
-        state=response.results[0].address_components[6].long_name;
-        cityName=response.results[0].address_components[3].long_name;
+        state=response.results[0].address_components[5].long_name;
+        cityName=response.results[0].address_components[2].long_name;
         var city= state+"/"+cityName;
         $("#userLocation").html(cityName +", " +state);
         getCity(city);
