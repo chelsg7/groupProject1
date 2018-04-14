@@ -17,7 +17,7 @@ function getCity(city) {
    // var city = "nc/cary";
 
     //API for wether forecast, use one of the below two api key
-    var queryURL = "http://api.wunderground.com/api/87d18b0282c9396c/forecast/q/"+city+".json"; 
+    var queryURL = "https://api.wunderground.com/api/87d18b0282c9396c/forecast/q/"+city+".json"; 
     //var queryURL = "http://api.wunderground.com/api/e58ab528f4132c06/forecast/q/"+city+".json";
 
     $.ajax({
@@ -77,7 +77,7 @@ function getCity(city) {
         });
         
     //API url (use one of the two.)
-    var queryURL2 = "http://api.wunderground.com/api/87d18b0282c9396c/conditions/q/"+city+".json"
+    var queryURL2 = "https://api.wunderground.com/api/87d18b0282c9396c/conditions/q/"+city+".json"
     //var queryURL2 = "http://api.wunderground.com/api/e58ab528f4132c06/conditions/q/"+city+".json"
     console.log(queryURL2);
 
@@ -153,6 +153,8 @@ function showPosition(position) {
         console.log(response);
         console.log(response.results[0].address_components[5].long_name);
         console.log(response.results[0].address_components[2].long_name);
+        console.log(response.results[0].address_components[6].long_name);
+        console.log(response.results[0].address_components[3].long_name);
         state=response.results[0].address_components[6].long_name;
         cityName=response.results[0].address_components[3].long_name;
         var city= state+"/"+cityName;
