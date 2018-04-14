@@ -1,3 +1,5 @@
+
+
 var map, infoWindow;
 var lat = 35.779590;
 var lng = -78.638179;
@@ -124,20 +126,19 @@ function userSearch(city, state) {
         $("#direction" + i).html(response.places[i].directions)
       }
     }
-  }})}
-
-    $(document).ready(function () {
-      $("#search").on("click", function(event) {
-        event.preventDefault();
-        var cityInput = ($(".inputCity").val().trim());
-        var stateInput = ($(".inputState").val().trim());
-        console.log(cityInput + stateInput);
-        if ((stateInput != "") && cityInput != "")
-        {
-          userSearch(cityInput,stateInput)
-        }
-        else{
-          $("#alert").html("Please enter a city and a state")
-        }
-      });
-      })
+  })
+}
+$(document).ready(function () {
+  $("#search").on("click", function (event) {
+    event.preventDefault();
+    var cityInput = ($(".inputCity").val().trim());
+    var stateInput = ($(".inputState").val().trim());
+    console.log(cityInput + stateInput);
+    if ((stateInput != "") && cityInput != "") {
+      userSearch(cityInput, stateInput)
+    }
+    else {
+      $("#alert").html("Please enter a city and a state")
+    }
+  });
+})
