@@ -6,7 +6,7 @@
     Used two url: One for current weather condition and another for forecast.    
     http://api.wunderground.com/api/{key}/forecast/q/"+city+".json"
     http://api.wunderground.com/api/{key}/conditions/q/"+city+".json
-    city format: state short name/city full name (eg; HI/Honolulu)
+    
     The response gives difference parameters of current weather information and forecast. We have used icons,
     short description about present condition, some parameters and forecast for three phases (day-night-next day or night-nextday-next night)
     The main problem was to pass the city format to the url and fixed input area in the format that is accepted by API url.
@@ -17,8 +17,8 @@ function getCity(city) {
    // var city = "nc/cary";
 
     //API for wether forecast, use one of the below two api key
-    var queryURL = "https://api.wunderground.com/api/87d18b0282c9396c/forecast/q/"+city+".json"; 
-    //var queryURL = "http://api.wunderground.com/api/e58ab528f4132c06/forecast/q/"+city+".json";
+    //var queryURL = "https://api.wunderground.com/api/87d18b0282c9396c/forecast/q/"+city+".json"; 
+    var queryURL = "http://api.wunderground.com/api/e58ab528f4132c06/forecast/q/"+city+".json";
 
     $.ajax({
         url: queryURL,
@@ -77,8 +77,8 @@ function getCity(city) {
         });
         
     //API url (use one of the two.)
-    var queryURL2 = "https://api.wunderground.com/api/87d18b0282c9396c/conditions/q/"+city+".json"
-    //var queryURL2 = "http://api.wunderground.com/api/e58ab528f4132c06/conditions/q/"+city+".json"
+    //var queryURL2 = "https://api.wunderground.com/api/87d18b0282c9396c/conditions/q/"+city+".json"
+    var queryURL2 = "http://api.wunderground.com/api/e58ab528f4132c06/conditions/q/"+city+".json"
     console.log(queryURL2);
 
     $.ajax({
@@ -116,7 +116,7 @@ function getCity(city) {
         });
 };
 
-$("#search").click(function(event){
+$("#searchbtn").click(function(event){
     event.preventDefault();
     
     state2= $("#stateInput").val().trim();
@@ -150,13 +150,33 @@ function showPosition(position) {
     })
     
         .then (function(response) {
-        console.log(response);
-        console.log(response.results[0].address_components[5].long_name);
-        console.log(response.results[0].address_components[2].long_name);
-        console.log(response.results[0].address_components[6].long_name);
-        console.log(response.results[0].address_components[3].long_name);
-        state=response.results[0].address_components[5].long_name;
-        cityName=response.results[0].address_components[2].long_name;
+            response.results[0].address_components.forEach(function(data1){
+                    data1.types.forEach(function(data2){
+                        if(data2 ==="locality"){
+                            cityName=data1.long_name;
+           
+                        }
+                        if(data2=== "administrative_area_level_1"){
+                            state=data1.long_name;
+           
+                        }
+                        if(data2=== "country"){
+                            country=data1.long_name;
+           
+                        }
+                    })
+          
+            });
+        console.log(country);
+        if(country !="United States"){
+            state=country;
+        }
+        //console.log(response.results[0].address_components[5].long_name);
+        //console.log(response.results[0].address_components[2].long_name);
+        //console.log(response.results[0].address_components[6].long_name);
+       // console.log(response.results[0].address_components[3].long_name);
+      //  state=response.results[0].address_components[5].long_name;
+        //cityName=response.results[0].address_components[2].long_name;
         var city= state+"/"+cityName;
         $("#userLocation").html(cityName +", " +state);
         getCity(city);

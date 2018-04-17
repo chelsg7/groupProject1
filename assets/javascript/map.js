@@ -129,7 +129,7 @@ function userSearch(city, state) {
   })
 }
 $(document).ready(function () {
-  $("#search").on("click", function (event) {
+  $("#searchbtn").on("click", function (event) {
     event.preventDefault();
     var cityInput = ($(".inputCity").val().trim());
     var stateInput = ($(".inputState").val().trim());
